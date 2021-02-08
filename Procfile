@@ -1,0 +1,1 @@
+web: gunicorn djan_craigo.wsgi --log-file -

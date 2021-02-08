@@ -16,8 +16,7 @@ def new_search(request):
     # Search.objects.create(search=search)
     final_url = BASE_CRAIGSLIST_URL.format(quote_plus(search))
     response = requests.get(final_url)
-    data = response.text
-    soup = BeautifulSoup(data, 'html.parser')
+    soup = BeautifulSoup(response.content, 'html.parser')
 
     post_listings = soup.find_all('li', class_= 'result-row')
     
