@@ -13,15 +13,15 @@ def home(request):
 
 def new_search(request):
     search = request.POST.get('search')
-    Search.objects.create(search=search)
+    # Search.objects.create(search=search)
     final_url = BASE_CRAIGSLIST_URL.format(quote_plus(search))
     response = requests.get(final_url)
     data = response.text
     soup = BeautifulSoup(data, 'html.parser')
 
     post_listings = soup.find_all('li', class_= 'result-row')
+    
     final_postings = []
-
     for post in post_listings:
         post_title = post.find(class_='result-title').text
         post_url = post.find('a').get('href')
