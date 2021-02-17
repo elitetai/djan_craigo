@@ -1,4 +1,4 @@
-# Djan-Craigo app
+# Djan-Craigo
 
 A simple Craigslist-search web using Django. User can search for Craigslist's posts with this app (Under Malaysia/Singapore region). 
 
